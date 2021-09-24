@@ -1024,7 +1024,7 @@ begin
 		P_CANONICAL_URI	=> P_CANONICAL_URI,
 		P_DATE					=> sysdate
 		);
-		
+	apex_web_service.g_request_headers.delete; -- fixed the AWS error: Only one auth mechanism allowed
 	l_blob 	:= apex_web_service.make_rest_request_b(
 			p_url               => l_url,
 			p_http_method       => 'GET',
